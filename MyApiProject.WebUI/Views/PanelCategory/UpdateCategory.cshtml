@@ -1,0 +1,24 @@
+﻿@using MyApiProject.DtosLayer.CategoryDtos
+@model UpdateCategoryDtos
+@{
+    ViewData["Title"] = "UpdateAbout";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+<br />
+<h1>Kategori Güncelleme Sayfası</h1>
+
+<div class="container">
+    <form method="post">
+        <input type="hidden" asp-for="CategoryId" />
+        <label>Kategori</label>
+        <input asp-for="CategoryName" class="form-control"></input>
+        <br />
+        <label>Başlık</label>
+        <input asp-for="Title" class="form-control"></input>
+        <br />
+        <label>Fotoğraf</label>
+        <input asp-for="ImageUrl" class="form-control"></input>
+        <br />
+    </form>
+    <button class="btn btn-success">Güncelle</button>
+</div>

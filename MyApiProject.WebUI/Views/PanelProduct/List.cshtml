@@ -1,0 +1,39 @@
+﻿@using MyApiProject.DtosLayer.ProductDtos
+@model List<ResultProductDtos>
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+<br />
+<h1>Ürünler</h1>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Ürün Adı</th>
+                <th>Fiyatı</th>
+                <th>Detay</th>
+                <th>Fotoğraf</th>
+                <th>Kategori</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ProductName</td>
+                    <td>@item.Price</td>
+                    <td>@item.Detail</td>
+                    <td>@item.ImageUrl</td>
+                    <td>@item.CategoryId</td>
+                    <td><a class="btn btn-danger" href="/PanelProduct/DeleteProduct/@item.ProductId">Sil</a></td>
+                    <td><a class="btn btn-success" href="/PanelProduct/UpdateProduct/@item.ProductId">Güncelle</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a class="btn btn-info" href="/PanelProduct/CreateProduct">Ekle</a>
+</div>
+

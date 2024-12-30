@@ -1,0 +1,35 @@
+﻿@using MyApiProject.DtosLayer.CategoryDtos
+@model List<ResultCategoryDtos>
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+<br />
+<h1>Kategori Listesi</h1>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Kategori Adı</th>
+                <th>Başlık</th>
+                <th>Fotoğraf</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.CategoryName</td>
+                    <td>@item.Title</td>
+                    <td>@item.ImageUrl</td>
+                    <td><a class="btn btn-danger" href="/PanelCategory/DeleteCategory/@item.CategoryId">Sil</a></td>
+                    <td><a class="btn btn-success" href="/PanelCategory/UpdateCategory/@item.CategoryId">Güncelle</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a class="btn btn-info" href="/PanelCategory/CreateCategory/">Ekle</a>
+</div>
+

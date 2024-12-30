@@ -1,0 +1,37 @@
+﻿@using MyApiProject.WebUI.Dtos.AboutDtos
+@model List<ResultAboutDtos>
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+<br />
+<h1>Hakkımızda</h1>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Hikayemiz</th>
+                <th>Misyonumuz</th>
+                <th>1. Fotoğraf</th>
+                <th>2. Fotoğraf</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.OurStory.Substring(0, 15)</td>
+                    <td>@item.OurMission.Substring(0, 15)</td>
+                    <td>@item.Image1</td>
+                    <td>@item.Image2</td>
+                    <td><a class="btn btn-danger" href="/PanelAbout/DeleteAbout/@item.AboutId">Sil</a></td>
+                    <td><a class="btn btn-success" href="/PanelAbout/UpdateAbout/@item.AboutId">Güncelle</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a class="btn btn-info" href="/PanelAbout/CreateAbout">Ekle</a>
+</div>
+

@@ -1,0 +1,30 @@
+﻿@using MyApiProject.DtosLayer.ProductDtos
+@model UpdateProductDtos
+@{
+    ViewData["Title"] = "UpdateAbout";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+<br />
+<h1>Ürün Güncelleme Sayfası</h1>
+
+<div class="container">
+    <form method="post">
+        <input type="hidden" asp-for="ProductId" />
+        <label>Üürn Adı</label>
+        <input asp-for="ProductName" class="form-control" />
+        <br />
+        <label>Fiyat</label>
+        <input asp-for="Price" class="form-control" />
+        <br />
+        <label>Detaylar</label>
+        <textarea asp-for="Detail" class="form-control"></textarea>
+        <br />
+        <label>Fotoğraf</label>
+        <input asp-for="ImageUrl" class="form-control" />
+        <br />
+        <label>Kategori</label>
+        @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
+        <br />
+    </form>
+    <button class="btn btn-success">Güncelle</button>
+</div>

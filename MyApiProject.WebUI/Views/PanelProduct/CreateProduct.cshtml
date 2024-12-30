@@ -1,0 +1,29 @@
+﻿@using MyApiProject.DtosLayer.ProductDtos
+@model CreateProductDtos
+@{
+    ViewData["Title"] = "CreateAbout";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+<br />
+<h1>Ürün Ekleme Sayfası</h1>
+
+<div class="container">
+    <form method="post">
+        <label>Ürün Adı</label>
+        <input asp-for="ProductName" class="form-control" />
+        <br />
+        <label>Fiyatı</label>
+        <input asp-for="Price" class="form-control" />
+        <br />
+        <label>Detaylar</label>
+        <textarea asp-for="Detail" class="form-control"></textarea>
+        <br />
+        <label>Fotoğraf</label>
+        <input asp-for="ImageUrl" class="form-control" />
+        <br />
+        <label>Kategori</label>
+        @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
+        <br />
+    </form>
+</div>
+<button class="btn btn-primary" type="submit">Kaydet</button>

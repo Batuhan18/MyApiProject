@@ -1,0 +1,23 @@
+﻿@using MyApiProject.DtosLayer.CategoryDtos
+@model CreateCategoryDtos
+@{
+    ViewData["Title"] = "CreateAbout";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+<br />
+<h1>Hakkımızda Ekleme Sayfası</h1>
+
+<div class="container">
+    <form method="post">
+        <label>Kategori :</label>
+        <input asp-for="CategoryName" class="form-control" />
+        <br />
+        <label>Başlık :</label>
+        <input asp-for="Title" class="form-control" />
+        <br />
+        <label>Fotoğraf :</label>
+        <input asp-for="ImageUrl" class="form-control" />
+        <br />
+    </form>
+</div>
+<button class="btn btn-primary" type="submit">Kaydet</button>

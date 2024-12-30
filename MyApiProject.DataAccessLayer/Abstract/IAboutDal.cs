@@ -9,6 +9,9 @@ namespace MyApiProject.DataAccessLayer.Abstract
 {
     public interface IAboutDal
     {
+        void Delete(int id);
         List<About> GetAll();
+        void Insert(About entity);
+        void Update(About entity);
     }
 }

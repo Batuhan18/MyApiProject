@@ -1,0 +1,26 @@
+﻿@using MyApiProject.WebUI.Dtos.AboutDtos
+@model CreateAboutDtos
+@{
+    ViewData["Title"] = "CreateAbout";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+<br />
+<h1>Hakkımızda Ekleme Sayfası</h1>
+
+<div class="container">
+    <form method="post">
+        <label>Hikayemiz :</label>
+        <textarea asp-for="OurStory" class="form-control"></textarea>
+        <br />
+        <label>Misyonumuz :</label>
+        <textarea asp-for="OurMission" class="form-control"></textarea>
+        <br />
+        <label>1. Fotoğraf :</label>
+        <input asp-for="Image1" class="form-control"></input>
+        <br />
+        <label>2. Fotoğraf :</label>
+        <input asp-for="Image2" class="form-control"></input>
+        <br />
+    </form>
+</div>
+<button class="btn btn-primary" type="submit">Kaydet</button>

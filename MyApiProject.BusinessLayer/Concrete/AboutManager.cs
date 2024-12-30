@@ -20,7 +20,7 @@ namespace MyApiProject.BusinessLayer.Concrete
 
         public void TDelete(int id)
         {
-            throw new NotImplementedException();
+           _aboutDal.Delete(id);
         }
 
         public List<About> TGetAll()
@@ -35,12 +35,12 @@ namespace MyApiProject.BusinessLayer.Concrete
 
         public void TInsert(About entity)
         {
-            throw new NotImplementedException();
+            _aboutDal.Insert(entity);
         }
 
         public void TUpdate(About entity)
         {
-            throw new NotImplementedException();
+            _aboutDal.Update(entity);
         }
     }
 }
