@@ -1,6 +1,5 @@
 Hello,
-I have completed the 'API' project cases as part of the Full Stack Developer course under the mentorship of Murat Yücedağ at M&Y Yazılım Eğitim Akademi Danışmanlık.
-I’d like to share the details of the project.
+I have completed the 'API' project cases.
 📍The project is fully coded with APIs and consists of 6 layers: Business, DataAccess, Entity, DTO, API, and UI.
 📍The Main Page includes the homepage, about us, and contact pages.
 📍Products are listed on the homepage, and all details can be viewed.
